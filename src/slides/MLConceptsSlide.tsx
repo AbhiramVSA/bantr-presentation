@@ -3,27 +3,27 @@ import LiquidGlassCard from '../components/LiquidGlassCard';
 
 const concepts = [
   {
-    title: 'Supervised Learning — Fallacy Classification',
+    title: 'Speech-to-Text (STT)',
     points: [
-      'Fine-tuned DeBERTa-v3-base on a labeled corpus of 14 logical fallacy types (ad hominem, straw man, red herring, etc.)',
-      'Training: 12k annotated debate excerpts, 80/10/10 split, cross-entropy loss, AdamW optimizer',
-      'Achieved 89% macro F1 score — classifies fallacies in real-time from debate transcripts',
+      'Deepgram Nova-2 streaming ASR via WebSocket — converts raw 16kHz PCM audio to text with <300ms latency',
+      'Punctuation recovery and endpointing detect natural turn boundaries for real-time conversation flow',
+      'Speaker diarization with PyAnnote segments multi-speaker audio so each debater\'s words are attributed correctly',
     ],
   },
   {
-    title: 'Regression — Argument Quality Scoring',
+    title: 'LLM Processing',
     points: [
-      'Custom regression model trained on debate corpus with human-annotated quality scores (1–10 scale)',
-      'Features: argument structure depth, evidence density, logical coherence, rebuttal specificity',
-      'Output: per-argument strength score used in post-debate performance reports',
+      'GPT-4 Turbo / Claude 3.5 Sonnet receives transcript with system prompt defining debate persona, rules, and style',
+      'Chain-of-thought prompting: identify opponent\'s claim → find logical weakness → construct counter-argument',
+      'Temperature 0.7–0.9 for creative argumentation; context window carries full debate history for coherent responses',
     ],
   },
   {
-    title: 'Embedding Models & Similarity Search',
+    title: 'Text-to-Speech (TTS)',
     points: [
-      'OpenAI text-embedding-3-small generates 1536-dimensional vectors for debate transcript chunks',
-      'Cosine similarity search in Pinecone vector store for top-k=5 context retrieval',
-      'Enables persistent agent memory — the AI recalls prior debates and adapts strategy accordingly',
+      'ElevenLabs Turbo v2 converts LLM output to speech with prosody modeling and emotion injection',
+      'Chunked audio streaming — TTS begins on first sentence while LLM is still generating the rest',
+      'End-to-end latency: user speaks → STT → LLM → TTS → audio playback in under 2 seconds',
     ],
   },
 ];
@@ -47,7 +47,7 @@ export default function MLConceptsSlide() {
             Machine Learning
           </h1>
           <p style={{ fontSize: 'clamp(13px, 1.05vw, 20px)', opacity: 0.7, marginTop: '0.5%' }}>
-            Core ML techniques applied in Bantr
+            STT → LLM → TTS: the real-time voice AI pipeline
           </p>
         </div>
 

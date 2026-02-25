@@ -7,7 +7,6 @@ const left = {
     'Deepgram Nova-2: streaming ASR with <300ms latency, punctuation recovery, and speaker diarization support',
     'ElevenLabs Turbo v2: neural TTS with prosody modeling, emotion injection, and chunked audio streaming',
     'Pipeline: raw audio (16kHz PCM) → Deepgram WebSocket → transcript → LLM → text → ElevenLabs → audio stream',
-    'Speaker Diarization: PyAnnote segments multi-speaker audio for accurate transcript attribution',
   ],
 };
 
@@ -17,7 +16,6 @@ const rightTop = {
     'GPT-4 Turbo / Claude 3.5 Sonnet with custom debate system prompts defining persona, style, and constraints',
     'Chain-of-thought (CoT) prompting for structured rebuttals: identify claim → find weakness → construct counter-argument',
     'System prompt includes debate rules, scoring awareness, and adversarial behavior directives (not agreeable by design)',
-    'Temperature tuning: 0.7–0.9 for creative argumentation, lower for factual precision in evidence-based debates',
   ],
 };
 
@@ -27,7 +25,6 @@ const rightBottom = {
     'VADER (lexicon-based) for real-time polarity scoring during debate — feeds into mood image generation',
     'Custom transformer classifier for debate tone: aggressive, conciliatory, evasive, analytical, persuasive',
     'Sentiment trajectory tracked across turns — generates "emotional arc" used by DALL·E 3 prompt construction',
-    'Combined output: per-turn sentiment + overall debate mood → structured report + generated artwork',
   ],
 };
 
