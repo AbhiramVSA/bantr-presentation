@@ -55,10 +55,10 @@ export default function CoverSlide() {
             }}
           >
             <p style={{ fontSize: 'clamp(13px, 1.05vw, 20px)', opacity: 0.7 }}>
-              Abhir Bhandary
+              Abhiram · Ishita · Pavan
             </p>
             <p style={{ fontSize: 'clamp(12px, 0.95vw, 18px)', opacity: 0.5 }}>
-              Applications of AI — 2025
+              Applications of AI — 2026
             </p>
           </div>
         </div>
