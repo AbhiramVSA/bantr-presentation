@@ -1,7 +1,7 @@
 import VideoBackground from '../components/VideoBackground';
 import LiquidGlassCard from '../components/LiquidGlassCard';
 
-const references = [
+const leftCol = [
   {
     category: 'Large Language Models',
     items: [
@@ -19,6 +19,16 @@ const references = [
     ],
   },
   {
+    category: 'Image Generation & Multimodal',
+    items: [
+      'OpenAI. "DALL·E 3: Improving Image Generation with Better Captions." OpenAI Research, 2023.',
+      'Ramesh, A. et al. "Hierarchical Text-Conditional Image Generation with CLIP Latents." arXiv:2204.06125, 2022.',
+    ],
+  },
+];
+
+const rightCol = [
+  {
     category: 'RAG & Vector Search',
     items: [
       'Lewis, P. et al. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." NeurIPS 2020.',
@@ -34,14 +44,39 @@ const references = [
       'Habernal, I. et al. "Argumentation Mining in User-Generated Web Discourse." Computational Linguistics, 2017.',
     ],
   },
-  {
-    category: 'Image Generation & Multimodal',
-    items: [
-      'OpenAI. "DALL·E 3: Improving Image Generation with Better Captions." OpenAI Research, 2023.',
-      'Ramesh, A. et al. "Hierarchical Text-Conditional Image Generation with CLIP Latents." arXiv:2204.06125, 2022.',
-    ],
-  },
 ];
+
+function RefCard({ category, items }: { category: string; items: string[] }) {
+  return (
+    <LiquidGlassCard style={{ padding: 'clamp(10px, 0.9vw, 18px) clamp(14px, 1.3vw, 24px)' }}>
+      <h3 style={{ fontSize: 'clamp(12px, 0.95vw, 18px)', fontWeight: 700, marginBottom: 'clamp(5px, 0.4vw, 8px)' }}>
+        {category}
+      </h3>
+      <ul className="list-none" style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(3px, 0.25vw, 5px)' }}>
+        {items.map((item) => (
+          <li
+            key={item}
+            className="flex items-start"
+            style={{ fontSize: 'clamp(10px, 0.75vw, 14px)', opacity: 0.8, lineHeight: 1.45 }}
+          >
+            <span
+              className="flex-shrink-0"
+              style={{
+                width: 'clamp(4px, 0.28vw, 5px)',
+                height: 'clamp(4px, 0.28vw, 5px)',
+                borderRadius: '50%',
+                background: 'rgba(255,255,255,0.4)',
+                marginTop: 'clamp(5px, 0.38vw, 7px)',
+                marginRight: 'clamp(6px, 0.5vw, 9px)',
+              }}
+            />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </LiquidGlassCard>
+  );
+}
 
 export default function ReferencesSlide() {
   return (
@@ -61,33 +96,18 @@ export default function ReferencesSlide() {
           References
         </h1>
 
-        {/* Reference cards in a scrollable area */}
-        <div
-          className="flex-1 flex flex-col"
-          style={{ marginTop: '2.5%', gap: 'clamp(8px, 0.8vw, 14px)', overflow: 'hidden' }}
-        >
-          {references.map((r) => (
-            <LiquidGlassCard
-              key={r.category}
-              style={{ padding: 'clamp(10px, 1.1vw, 20px) clamp(16px, 1.6vw, 28px)' }}
-            >
-              <h3 style={{ fontSize: 'clamp(12px, 1vw, 19px)', fontWeight: 700, marginBottom: 'clamp(6px, 0.5vw, 10px)' }}>
-                {r.category}
-              </h3>
-              <ul className="list-none" style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(4px, 0.35vw, 7px)' }}>
-                {r.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start"
-                    style={{ fontSize: 'clamp(10px, 0.78vw, 15px)', opacity: 0.8, lineHeight: 1.5 }}
-                  >
-                    <span className="flex-shrink-0" style={{ width: 'clamp(4px, 0.3vw, 6px)', height: 'clamp(4px, 0.3vw, 6px)', borderRadius: '50%', background: 'rgba(255,255,255,0.4)', marginTop: 'clamp(6px, 0.4vw, 8px)', marginRight: 'clamp(8px, 0.6vw, 10px)' }} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </LiquidGlassCard>
-          ))}
+        {/* Two-column layout */}
+        <div className="flex flex-1" style={{ marginTop: '2%', gap: 'clamp(10px, 1vw, 18px)' }}>
+          <div className="flex flex-col flex-1" style={{ gap: 'clamp(8px, 0.7vw, 12px)' }}>
+            {leftCol.map((r) => (
+              <RefCard key={r.category} category={r.category} items={r.items} />
+            ))}
+          </div>
+          <div className="flex flex-col flex-1" style={{ gap: 'clamp(8px, 0.7vw, 12px)' }}>
+            {rightCol.map((r) => (
+              <RefCard key={r.category} category={r.category} items={r.items} />
+            ))}
+          </div>
         </div>
 
         {/* Footer */}
