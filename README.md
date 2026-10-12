@@ -1,77 +1,67 @@
-# Bantr — AI-Powered Real-Time Voice Debate Platform
+<p align="center">
+  <img src="public/bantr-presentation-logo.png" alt="Navy presentation screen with a speech bubble and connected nodes" width="160">
+</p>
 
-An interactive research presentation exploring the architecture, AI pipeline, and infrastructure behind **Bantr**, a platform that enables real-time voice debates between humans and configurable AI agents.
+<h1 align="center">Bantr: Applications of AI</h1>
 
-Built as an academic showcase for **Applications of Artificial Intelligence**, covering NLP, deep learning, speech processing, RAG systems, and production-grade deployment.
+<p align="center">An academic presentation about AI applications and an AI-assisted debate design.</p>
 
-## Overview
+<div align="center">
 
-Bantr pairs users with AI debate opponents that have distinct personalities and argumentation styles. The core pipeline — Speech-to-Text → LLM Reasoning → Text-to-Speech — achieves sub-2 second end-to-end latency. Post-debate analysis includes fallacy detection, argument scoring, sentiment tracking, and mood-based image generation.
+[Main deck](#main-deck) · [Risk-sensitive deck](#risk-sensitive-deck) · [Controls](#controls) · [Local development](#local-development) · [Credits](#credits) · [License](#license)
 
-This presentation walks through the full system across **11 interactive slides**, each backed by looping HLS video and a glassmorphic UI.
+</div>
 
-## Presentation Topics
+## Main deck
 
-| Slide | Content |
-|-------|---------|
-| Cover | Project title, team, animated background |
-| Abstract | System overview, real-time voice pipeline, post-debate intelligence |
-| Area & Domain | Five interdisciplinary AI domains explored |
-| ML Concepts | STT → LLM → TTS pipeline breakdown |
-| Deep Learning | Transformer architecture (DeBERTa-v3), generative models (DALL·E 3), neural TTS |
-| NLP | Speech recognition, language generation, sentiment analysis |
-| RAG & Memory | Chunking, vector embeddings, Pinecone retrieval, cross-session persistence |
-| Software & Platforms | Frontend, backend, AI services, DevOps stack |
-| Hardware & Infrastructure | GPU compute, cloud services, CDN, monitoring |
-| References | Academic papers across LLMs, speech, RAG, NLP, and image generation |
+The main deck has 11 slides. It presents the Bantr debate design and topics such as speech recognition, language models, speech synthesis, retrieval-augmented generation, and post-debate analysis.
 
-## Tech Stack
+<p align="center">
+  <img src="docs/images/bantr-machine-learning-slide.png" alt="Machine Learning slide with speech-to-text, LLM processing, and text-to-speech sections" width="100%">
+</p>
 
-**Presentation**
-- React 19 + TypeScript
-- Vite 7
-- Tailwind CSS 4
-- HLS.js for video streaming
-- Lucide React for icons
+<p align="center"><sub>Slide 5 of the main deck, captured at <code>/?slide=5</code>.</sub></p>
 
-**Bantr Platform (Presented)**
-- **Speech**: Deepgram Nova-2 (STT), ElevenLabs Turbo v2 (TTS)
-- **Reasoning**: GPT-4 Turbo, Claude 3.5 Sonnet
-- **Classification**: Fine-tuned DeBERTa-v3 (14 fallacy types, 89% F1)
-- **Retrieval**: OpenAI embeddings + Pinecone vector DB
-- **Generation**: DALL·E 3 for mood-based imagery
-- **Backend**: Node.js/Express, Python FastAPI, WebSocket, WebRTC
-- **Data**: PostgreSQL + Prisma, Redis
-- **Infra**: Vercel, Railway, AWS (S3, CloudFront, g5.xlarge GPU), GitHub Actions
+## Risk-sensitive deck
 
-## Getting Started
+The same app also serves a 12-slide risk-sensitive distributional actor-critic research deck for sales dialogue at `/rl-presentation`.
+
+## Controls
+
+- Use Right, Down, or Space to move to the next slide.
+- Use Left or Up to return to the previous slide.
+- Press F to enter or leave full-screen mode.
+- Press Escape to leave full-screen mode.
+- Use the on-screen arrows or progress dots to move between slides.
+
+Add `?slide=N` to either route to open a slide by number. For example, `/?slide=4` opens the fourth slide in the main deck.
+
+## Local development
+
+Use Node.js and npm. The repository does not set a Node.js version. Run these commands from the repository root:
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+npm ci --no-audit --no-fund
+npm run dev -- --host 127.0.0.1 --port 4173 --strictPort
 ```
 
-## Navigation
+The package file also defines these checks:
 
-- **Arrow keys** or **Spacebar** — navigate between slides
-- **F** — toggle fullscreen
-- **Mouse** — bottom controls with progress indicator
+```bash
+npm run build
+npm run lint
+```
 
-## Team
+The package file does not define a test script.
 
-- Abhiram
-- Ishita
-- Pavan
+## Media
+
+The slide backgrounds can load HLS video from Mux. The app requests this remote media while it runs.
+
+## Credits
+
+The README credits Abhiram, Ishita, and Pavan. The main deck cover also names Shreya.
 
 ## License
 
-This project is part of an academic research presentation and is not licensed for commercial use.
+The README states: “This project is part of an academic research presentation and is not licensed for commercial use.” No separate LICENSE, COPYING, or NOTICE file is tracked.
