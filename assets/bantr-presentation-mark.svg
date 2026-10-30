@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Two voices in a debate</title>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="#211b3a"/>
+  <path d="M26 34a16 16 0 0 1 16-16h28a16 16 0 0 1 16 16v16a16 16 0 0 1-16 16H51L36 79V66a16 16 0 0 1-10-15V34Z" fill="#9a7dff"/>
+  <path d="M43 42v5m9-11v17m9-21v25m9-16v8" stroke="#211b3a" stroke-linecap="round" stroke-width="4"/>
+  <path d="M61 76h23a16 16 0 0 1 16 16v3a16 16 0 0 1-10 15v11L75 109H61a16 16 0 0 1-16-16v-1" fill="none" stroke="#75e0cc" stroke-linejoin="round" stroke-width="6"/>
+</svg>
