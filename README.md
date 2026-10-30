@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/bantr-presentation-mark.svg" alt="Two speech bubbles with a voice waveform" width="112" />
+  <img src="assets/bantr-presentation-logo.png" alt="Two conversation shapes framing a voice waveform" width="200" />
 </p>
 
 <h1 align="center">Bantr: Research Presentation</h1>
