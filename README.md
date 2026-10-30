@@ -57,6 +57,12 @@ npm run build
 
 React 19, TypeScript, Vite, Tailwind CSS 4, HLS.js, and Lucide React.
 
+## Team
+
+- Abhiram
+- Ishita
+- Pavan
+
 ## License
 
-No license file is included in this repository.
+This academic presentation is not licensed for commercial use. The repository does not include a separate `LICENSE` file.
